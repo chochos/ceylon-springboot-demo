@@ -1,13 +1,12 @@
-
 plugins {
     id 'com.athaydes.ceylon' version '1.1.2'
 }
 
+defaultTasks 'runCeylon'
 group 'com.lucono.ceylon.springboot.demo'
 version '1.0'
 
 repositories {
-    mavenLocal()
     mavenCentral()
     maven {
         url "http://repo.jenkins-ci.org/releases"

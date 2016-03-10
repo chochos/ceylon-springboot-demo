@@ -1,0 +1,9 @@
+
+[defaults]
+encoding=UTF-8
+overrides=build/overrides.xml
+flatclasspath=true
+
+
+[formattool]
+profile=default

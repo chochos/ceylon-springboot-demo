@@ -18,18 +18,6 @@
 		<buildCommand>
 			<name>com.redhat.ceylon.eclipse.ui.ceylonBuilder</name>
 			<arguments>
-				<dictionary>
-					<key>compileJs</key>
-					<value>true</value>
-				</dictionary>
-				<dictionary>
-					<key>systemRepo</key>
-					<value></value>
-				</dictionary>
-				<dictionary>
-					<key>verbose</key>
-					<value>code</value>
-				</dictionary>
 			</arguments>
 		</buildCommand>
 	</buildSpec>

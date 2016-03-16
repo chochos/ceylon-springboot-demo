@@ -5,7 +5,7 @@ module com.lucono.ceylon.springboot.demo "1.0.0" {
     
     shared import java.base "8";
     import java.jdbc "8";
-    import ceylon.interop.java "1.2.1";
+    import ceylon.interop.java "1.2.2";
     
     // --- Spring ---
     

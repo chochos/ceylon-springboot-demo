@@ -16,6 +16,7 @@ repositories {
 ceylon {
     module = 'com.lucono.ceylon.springboot.demo'
     moduleExclusions = [ 'ch.qos.logback:logback-classic' ]
+    overrides = 'overrides.xml'
 }
 
 dependencies {

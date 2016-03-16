@@ -6,21 +6,21 @@ import org.springframework.beans.factory.annotation { autowiredField = autowired
 
 restController
 requestMapping({ "/customers" })
-shared class CustomerController() {
-
-    autowiredField
-    late CustomerRepository repository;
+shared class CustomerController(repository) {
     
-
+    autowiredField
+    CustomerRepository repository;
+    
+    
     requestMapping({ "/" })
     shared JIterable<Customer> findAll() => repository.findAll();
     
-
-    requestMapping({ "{lastName}" })
-    shared JIterable<Customer> findByLastName(pathVariable String lastName)
-        => if (exists id=parseInteger(lastName)) then
-            if (exists cust=repository.findOne(Long.valueOf(id)))
-            then Collections.singleton(cust)
+    
+    requestMapping({ "{lastNameOrId}" })
+    shared JIterable<Customer> findByLastNameOrId(pathVariable String lastNameOrId) =>
+        if (exists id = parseInteger(lastNameOrId))
+        then if (exists cust = repository.findOne(Long.valueOf(id))) 
+            then Collections.singleton(cust) 
             else Collections.emptyList<Customer>()
-        else repository.findByLastName(lastName);
+        else repository.findByLastName(lastNameOrId);
 }

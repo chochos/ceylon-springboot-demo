@@ -29,7 +29,7 @@ shared class Application() {
                       Find all customers with findAll():
                       ----------------------------------
                       ``[ for (customer in repo.findAll()) customer.string ].fold("")(
-                            (namesList, customerName) => namesList + "\n" + customerName)``
+                        (names, customerName) => names + "\n" + customerName)``
                       ----------------------------------");
             
             value bauerCustomers = repo.findByLastName("Bauer");
@@ -38,7 +38,7 @@ shared class Application() {
                       Find customers with findByLastName('Bauer'):
                       --------------------------------------------
                       ``[ for (customer in bauerCustomers) customer.string ].fold("")(
-                        (namesList, customerName) => namesList + "\n" + customerName)``");
+                        (names, customerName) => names + "\n" + customerName)``");
             
             Customer? customer1 = repo.findOne(Long.valueOf(1));
             
@@ -50,4 +50,4 @@ shared class Application() {
     };
 }
 
-shared void run() => SpringApplication.run(javaClass<Application>(), *process.arguments);
+shared void run() => SpringApplication.run(javaClass<Application>());

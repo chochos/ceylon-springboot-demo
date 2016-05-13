@@ -19,23 +19,18 @@ shared class Application() {
             
             /* Save some customers then find them in different ways */
             
-            value customers = {
-                Customer("Jack", "Bauer"),
-                Customer("Chloe", "O'Brian"),
-                Customer("Kim", "Bauer"),
-                Customer("David", "Palmer"),
-                Customer("Michelle", "Dessler")
-            };
-            
-            customers.each((customer) => repo.save(customer));
+            repo.save(Customer("Jack", "Bauer"));
+            repo.save(Customer("Chloe", "O'Brian"));
+            repo.save(Customer("Kim", "Bauer"));
+            repo.save(Customer("David", "Palmer"));
+            repo.save(Customer("Michelle", "Dessler"));
             
             log.info("
                       Find all customers with findAll():
                       ----------------------------------
                       ``[ for (customer in repo.findAll()) customer.string ].fold("")(
                             (namesList, customerName) => namesList + "\n" + customerName)``
-                      ----------------------------------
-                      ");
+                      ----------------------------------");
             
             value bauerCustomers = repo.findByLastName("Bauer");
             
@@ -43,16 +38,14 @@ shared class Application() {
                       Find customers with findByLastName('Bauer'):
                       --------------------------------------------
                       ``[ for (customer in bauerCustomers) customer.string ].fold("")(
-                            (namesList, customerName) => namesList + "\n" + customerName)``
-                      ");
+                        (namesList, customerName) => namesList + "\n" + customerName)``");
             
             Customer? customer1 = repo.findOne(Long.valueOf(1));
             
             log.info("
                       Find customer by Id with findOne(1):
                       ------------------------------------
-                      ``customer1?.string else "<Customer not found>"``
-                      ");
+                      ``customer1?.string else "<Customer not found>"``");
         }
     };
 }

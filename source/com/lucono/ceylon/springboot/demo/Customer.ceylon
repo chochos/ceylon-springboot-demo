@@ -1,16 +1,12 @@
-import javax.persistence { 
-    entity, 
-    id = id__FIELD, 
-    generated = generatedValue__FIELD, 
-    GenerationType { autoGen = AUTO } 
-}
+import javax.persistence { entity, id, generatedValue, GenerationType { autoGen = AUTO } }
 
 
 entity
 shared class Customer(
+    
     shared variable String firstName = "",
     shared variable String lastName = "",
-    id generated { strategy = autoGen; }
+    id generatedValue { strategy = GenerationType.autoGen; }
     shared Integer id = 0) {
     
     string => "Customer ``id``: ``firstName`` ``lastName``";

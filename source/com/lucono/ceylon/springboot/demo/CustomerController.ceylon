@@ -1,10 +1,10 @@
 import java.lang { Long }
 import org.springframework.web.bind.annotation { restController, requestMapping, pathVariable, requestParam }
-import org.springframework.beans.factory.annotation { autowiredConstructor = autowired__CONSTRUCTOR }
+import org.springframework.beans.factory.annotation { autowired }
 
 
 restController
-autowiredConstructor
+autowired
 shared class CustomerController(CustomerRepository repository) {
     
     requestMapping({ "/" })

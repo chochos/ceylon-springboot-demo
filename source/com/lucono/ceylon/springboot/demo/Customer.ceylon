@@ -1,6 +1,5 @@
 import javax.persistence { entity, id, generatedValue, GenerationType { autoGen = AUTO } }
 
-
 entity
 shared class Customer(
     

@@ -14,5 +14,5 @@ shared class CustomerController(CustomerRepository repository) {
     function findById(pathVariable Long id) => repository.findOne(id);
     
     requestMapping({ "/search" })
-    function findByLastName(requestParam("lastName") String name) => repository.findByLastName(name);
+    function findByLastName(requestParam String lastName) => repository.findByLastName(lastName);
 }

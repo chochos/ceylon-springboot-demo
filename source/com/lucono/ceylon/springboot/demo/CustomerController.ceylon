@@ -1,26 +1,18 @@
-import java.lang { JIterable = Iterable, Long }
-import java.util { Collections }
-import org.springframework.web.bind.annotation { restController, requestMapping, pathVariable }
-import org.springframework.beans.factory.annotation { autowiredField = autowired__FIELD }
+import java.lang { Long }
+import org.springframework.web.bind.annotation { restController, requestMapping, pathVariable, requestParam }
+import org.springframework.beans.factory.annotation { autowiredConstructor = autowired__CONSTRUCTOR }
 
 
 restController
-requestMapping({ "/customers" })
-shared class CustomerController(repository) {
-    
-    autowiredField
-    CustomerRepository repository;
-    
+autowiredConstructor
+shared class CustomerController(CustomerRepository repository) {
     
     requestMapping({ "/" })
-    shared JIterable<Customer> findAll() => repository.findAll();
+    function findAll() => repository.findAll();
     
+    requestMapping({ "/{id}" })
+    function findById(pathVariable Long id) => repository.findOne(id);
     
-    requestMapping({ "{lastNameOrId}" })
-    shared JIterable<Customer> findByLastNameOrId(pathVariable String lastNameOrId) =>
-        if (exists id = parseInteger(lastNameOrId))
-        then if (exists cust = repository.findOne(Long.valueOf(id))) 
-            then Collections.singleton(cust) 
-            else Collections.emptyList<Customer>()
-        else repository.findByLastName(lastNameOrId);
+    requestMapping({ "/search" })
+    function findByLastName(requestParam("lastName") String name) => repository.findByLastName(name);
 }

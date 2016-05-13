@@ -1,6 +1,6 @@
 # ceylon-springboot-demo
 
-#### Compile and run this demo
+### Compile and run this demo
 
 Clone the project, then execute following command in the root of the project.
 
@@ -14,7 +14,7 @@ This will start the application on localhost, on port 8080. You can verify it is
 $ curl -i -X GET -H Accept:application/json http://localhost:8080/customers/
 ```
 
-#### Make some requests to the endpoints
+### Make some requests to the endpoints
 
 In your local browser, you can make requests to the various endpoints:
 

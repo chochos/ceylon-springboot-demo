@@ -22,10 +22,10 @@ In your local browser, you can make requests to the various endpoints:
 
   `http://localhost:8080/customers/`
 
-* Get customer by id, for customer whose id is 1:
+* Get customer whose id is 1:
 
   `http://localhost:8080/customers/1`
     
-* Find customer by last name, whose last name is `Palmer`:
+* Find customer whose last name is Palmer:
 
   `http://localhost:8080/customers/search/Palmer`

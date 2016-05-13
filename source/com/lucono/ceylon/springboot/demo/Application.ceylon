@@ -17,7 +17,7 @@ shared class Application() {
         
         shared actual void run(ApplicationArguments args) {
             
-            /* Save some customers then find them in different ways */
+            /* Save some customers then find and log them */
             
             repo.save(Customer("Jack", "Bauer"));
             repo.save(Customer("Chloe", "O'Brian"));

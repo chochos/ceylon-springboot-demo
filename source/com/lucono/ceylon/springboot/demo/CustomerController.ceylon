@@ -3,6 +3,7 @@ import org.springframework.web.bind.annotation { restController, requestMapping,
 import org.springframework.beans.factory.annotation { autowired }
 
 restController
+requestMapping({ "/customers" })
 autowired
 class CustomerController(CustomerRepository repository) {
     

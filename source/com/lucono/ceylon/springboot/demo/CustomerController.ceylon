@@ -4,7 +4,7 @@ import org.springframework.beans.factory.annotation { autowired }
 
 restController
 autowired
-shared class CustomerController(CustomerRepository repository) {
+class CustomerController(CustomerRepository repository) {
     
     requestMapping({ "/" })
     function findAll() => repository.findAll();

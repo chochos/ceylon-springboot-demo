@@ -7,7 +7,7 @@ import org.slf4j { LoggerFactory }
 
 
 springBootApplication
-shared class Application() {
+class Application() {
     
     value log = LoggerFactory.getLogger(javaClass<Application>());
     

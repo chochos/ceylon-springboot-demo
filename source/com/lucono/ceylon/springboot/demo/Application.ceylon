@@ -13,9 +13,9 @@ shared class Application() {
     
     bean 
     shared default ApplicationRunner init(
-            CustomerRepository repo) => object satisfies ApplicationRunner {
+        CustomerRepository repo) => object satisfies ApplicationRunner {
         
-        shared actual void run(ApplicationArguments? applicationArguments) {
+        shared actual void run(ApplicationArguments args) {
             
             /* Save some customers then find them in different ways */
             

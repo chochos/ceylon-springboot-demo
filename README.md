@@ -18,7 +18,7 @@ $ curl -i -X GET -H Accept:application/json http://localhost:8080/customers/
 
 In your local browser, you can make requests to the various endpoints:
 
-* View all customers:
+* Get all customers:
 
   `http://localhost:8080/customers/`
 

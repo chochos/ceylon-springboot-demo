@@ -2,10 +2,8 @@ import java.lang { Long }
 import org.springframework.web.bind.annotation { restController, requestMapping, pathVariable }
 import org.springframework.beans.factory.annotation { autowired }
 
-restController
 requestMapping({ "/customers" })
-autowired
-class CustomerController(CustomerRepository repository) {
+autowired restController class CustomerController(CustomerRepository repository) {
     
     requestMapping({ "/" })
     function findAll() => repository.findAll();

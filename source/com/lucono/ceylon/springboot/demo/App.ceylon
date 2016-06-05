@@ -6,13 +6,11 @@ import org.springframework.context.annotation { bean }
 import org.slf4j { LoggerFactory }
 
 
-springBootApplication
-class Application() {
+springBootApplication class App() {
     
-    value log = LoggerFactory.getLogger(javaClass<Application>());
+    value log = LoggerFactory.getLogger(javaClass<App>());
     
-    bean 
-    shared default ApplicationRunner init(
+    shared default bean ApplicationRunner init(
         CustomerRepository repo) => object satisfies ApplicationRunner {
         
         shared actual void run(ApplicationArguments args) {
@@ -50,4 +48,4 @@ class Application() {
     };
 }
 
-shared void run() => SpringApplication.run(javaClass<Application>());
+shared void run() => SpringApplication.run(javaClass<App>());

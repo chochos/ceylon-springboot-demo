@@ -1,5 +1,4 @@
-native("jvm")
-module com.lucono.ceylon.springboot.demo "1.0.0" {
+native("jvm") module com.lucono.ceylon.springboot.demo "1.0.0" {
     
     /* Language */
     shared import java.base "8";

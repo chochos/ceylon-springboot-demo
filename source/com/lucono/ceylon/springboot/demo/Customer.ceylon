@@ -1,12 +1,10 @@
-import javax.persistence { entity, id, generatedValue, GenerationType { autoGen = AUTO } }
+import javax.persistence { entity, id, generated = generatedValue }
 
-entity
-shared class Customer(
+shared entity class Customer(
     
     shared variable String firstName = "",
     shared variable String lastName = "",
-    id generatedValue { strategy = autoGen; }
-    shared Integer id = 0) {
+    shared generated id Integer id = 0) {
     
     string => "Customer ``id``: ``firstName`` ``lastName``";
 }

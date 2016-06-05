@@ -3,14 +3,14 @@ import org.springframework.web.bind.annotation { restController, requestMapping,
 import org.springframework.beans.factory.annotation { autowired }
 
 requestMapping({ "/customers" })
-autowired restController class CustomerController(CustomerRepository repository) {
+autowired restController class CustomerController(CustomerRepository repo) {
     
     requestMapping({ "/" })
-    function findAll() => repository.findAll();
+    function findAll() => repo.findAll();
     
     requestMapping({ "/{id}" })
-    function findById(pathVariable Long id) => repository.findOne(id);
+    function findById(pathVariable Long id) => repo.findOne(id);
     
     requestMapping({ "/search/{name}" })
-    function findByName(pathVariable String name) => repository.findByLastName(name);
+    function findByName(pathVariable String name) => repo.findByLastName(name);
 }
